@@ -102,9 +102,9 @@
 $$
 M =
 \left[
-\begin{matrix}
+\begin{bmatrix}
 r_{11} & r_{12} & r_{13} \\ r_{21} & r_{22} & r_{23} \\ r_{31} & r_{32} & r_{33} \\ \vdots & \vdots & \vdots \\ r_{N1} & r_{N2} & r_{N3}
-\end{matrix}
+\end{bmatrix}
 \right]
 $$
 
@@ -113,9 +113,9 @@ $$
 $$
 M' =
 \left[
-\begin{matrix}
+\begin{bmatrix}
 r_{11}-\overline{r}_1 & r_{12}-\overline{r}_2 & r_{13}-\overline{r}_3 \\ r_{21}-\overline{r}_1 & r_{22}-\overline{r}_2 & r_{23}-\overline{r}_3 \\ r_{31}-\overline{r}_1 & r_{32}-\overline{r}_2 & r_{33}-\overline{r}_3 \\ \vdots & \vdots & \vdots \\ r_{N1}-\overline{r}_1  r_{N2}-\overline{r}_2 & r_{N3}-\overline{r}_3
-\end{matrix}
+\end{bmatrix}
 \right]
 $$
 
@@ -134,7 +134,7 @@ $$
 $$
 \Lambda =
 \left[
-\begin{matrix} \lambda_1 & 0 & 0 \\ 0 & \lambda_2 & 0 \\ 0 & 0 & \lambda_3 \end{matrix}
+\begin{bmatrix} \lambda_1 & 0 & 0 \\ 0 & \lambda_2 & 0 \\ 0 & 0 & \lambda_3 \end{bmatrix}
 \right]
 $$
 
@@ -237,21 +237,21 @@ $$
 \boldsymbol{R} _{xyz} (\alpha, \beta, \gamma)
 & = \boldsymbol{R} _z (\gamma) \boldsymbol{R} _y (\beta) \boldsymbol{R} _x (\alpha)  \nonumber \\
 & =
-\begin{pmatrix}
+\begin{bmatrix}
 \cos \gamma& -\sin \gamma& 0  \\
 \sin \gamma& \cos \gamma& 0  \\
 0 & 0 & 1
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 \cos \beta& 0 & \sin \beta\\
 0 & 1 & 0 \\
 -\sin \beta& 0 & \cos \beta
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 1 & 0 & 0 \\
 0 & \cos \alpha& -\sin \alpha\\
 0 & \sin \alpha& \cos \alpha
-\end{pmatrix}
+\end{bmatrix}
 \end{align}
 }
 $$
@@ -324,18 +324,18 @@ $$
 
 $$
 {q \otimes p =
-\begin{pmatrix}
+\begin{bmatrix}
 q_w & -q_z & q_y & q_x \\
 q_z & q_w & -q_x & q_y \\
 -q_y & q_x & q_w & q_z \\
 -q_x & -q_y & -q_z & q_w
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 p_x \\
 p_y \\
 p_z \\
 p_w
-\end{pmatrix}
+\end{bmatrix}
 }
 $$
 

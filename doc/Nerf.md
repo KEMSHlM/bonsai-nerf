@@ -74,10 +74,8 @@ f: 焦点距離, c: 光学的中心, s: 剪断係数
 
 $$
 R =
-\left[
-\begin{matrix} f_{x} & s & c_{x} \\ 0 & f_{y} & c_{y} \\ 0 & 0 & 1
-\end{matrix}
-\right]
+\begin{bmatrix} f_{x} & s & c_{x} \\ 0 & f_{y} & c_{y} \\ 0 & 0 & 1
+\end{bmatrix}
 $$
 
 以下は，カメラキャリブレーションの様子．
@@ -98,16 +96,12 @@ $$
 
 $$
 R =
-\left[
-\begin{matrix} r_{11} & r_{12} & r_{13} \\ r_{21} & r_{22} & r_{23} \\ r_{31} & r_{32} & r_{33} \end{matrix}
-\right]
+\begin{bmatrix} r_{11} & r_{12} & r_{13} \\ r_{21} & r_{22} & r_{23} \\ r_{31} & r_{32} & r_{33} \end{bmatrix}
 $$
 
 $$
 t =
-\left[
-\begin{matrix} t_1 \\ t_2 \\ t_3 \end{matrix}
-\right]
+\begin{bmatrix} t_1 \\ t_2 \\ t_3 \end{bmatrix}
 $$
 
 ### 画像同士のマッチングについて
@@ -132,28 +126,20 @@ $$
 もう一つのカメラの相対的な位置は，回転行列と並行移動のベクトルで表現することができる．
 
 $$
-\left[
-\begin{matrix} X \\ Y \\ Z \end{matrix}
-\right]
+\begin{bmatrix} X \\ Y \\ Z \end{bmatrix}
 = R
-\left[
-\begin{matrix} X_w \\ Y_w \\ Z_w \end{matrix}
-\right]
+\begin{bmatrix} X_w \\ Y_w \\ Z_w \end{bmatrix}
 + t
 $$
 
 $$
 R =
-\left[
-\begin{matrix} r_{11} & r_{12} & r_{13} \\ r_{21} & r_{22} & r_{23} \\ r_{31} & r_{32} & r_{33} \end{matrix}
-\right]
+\begin{bmatrix} r_{11} & r_{12} & r_{13} \\ r_{21} & r_{22} & r_{23} \\ r_{31} & r_{32} & r_{33} \end{bmatrix}
 $$
 
 $$
 t =
-\left[
-\begin{matrix} t_1 \\ t_2 \\ t_3 \end{matrix}
-\right]
+\begin{bmatrix} t_1 \\ t_2 \\ t_3 \end{bmatrix}
 $$
 
 ## 5. NeRFのパラメータ
@@ -190,10 +176,10 @@ NeRFがシーンをレンダリングする際に，まず画像の各ビクセ�
 一方，建物のようなオブジェクトでは，AABBのサイズは大きくなる．
 
 以下は，**AABB=16**  
-<img src="./.img/AABB16.gif" width=500>
+<img src="../.img/AABB16.gif" width=500>
 
 以下は，**AABB=128**  
-<img src="./.img/AABB128.gif" width=500>
+<img src="../.img/AABB128.gif" width=500>
 
 上のgifからわかるように，AABBサイズが大きい場合に端の位置が遠くなっている．  
 また，AABBサイズの方が小さい場合に，対象の解像度も高くなっている．
