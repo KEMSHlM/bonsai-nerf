@@ -17,6 +17,8 @@
   - [ファイル入出力](#ファイル入出力)
   - [点群の可視化(レンダリング)](#点群の可視化レンダリング)
   - [サンプリング](#サンプリング)
+    - [ランダムサンプリング](#ランダムサンプリング)
+    - [ボクセルによるフィルタリング（サンプリングではない）](#ボクセルによるフィルタリングサンプリングではない)
   - [外れ値の除去](#外れ値の除去)
   - [法線推定](#法線推定)
   - [点群の回転](#点群の回転) - [オイラー角による回転](#オイラー角による回転) - [ジンバルロック](#ジンバルロック) - [固定角](#固定角) - [クォータニオンによる回転](#クォータニオンによる回転) - [クォータニオンとは](#クォータニオンとは) - [任意軸回転](#任意軸回転) - [クォータニオンによる回転操作](#クォータニオンによる回転操作) - [複素数の拡張としてのクォータニオン](#複素数の拡張としてのクォータニオン) - [クォータニオンの利点](#クォータニオンの利点)
@@ -179,21 +181,21 @@ $$
 {\begin{align}
 \boldsymbol{R} _{xyz} (\alpha, \beta, \gamma)
 & = \boldsymbol{R} _x (\alpha) \boldsymbol{R} _y (\beta) \boldsymbol{R} _z (\gamma)  \\
-& = \begin{pmatrix}
+& = \begin{bmatrix}
 1 & 0 & 0 \\
 0 & \cos \alpha& -\sin \alpha\\
 0 & \sin \alpha& \cos \alpha
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 \cos \beta& 0 & \sin \beta\\
 0 & 1 & 0 \\
 -\sin \beta& 0 & \cos \beta
-\end{pmatrix}
-\begin{pmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 1 & 0 & 0 \\
 0 & \cos \gamma& -\sin \gamma\\
 0 & \sin \gamma& \cos \gamma
-\end{pmatrix}
+\end{bmatrix}
 \end{align}
 }
 $$
