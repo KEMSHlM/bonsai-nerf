@@ -75,10 +75,7 @@ f: 焦点距離, c: 光学的中心, s: 剪断係数
 $$
 R =
 \left[
-\begin{matrix}
-f_{x} && s && c_{x} \\
-0 && f_{y} && c_{y} \\
-0 && 0 && 1
+\begin{matrix} f_{x} & s & c_{x} \\ 0 & f_{y} & c_{y} \\ 0 & 0 & 1
 \end{matrix}
 \right]
 $$
@@ -102,7 +99,7 @@ $$
 $$
 R =
 \left[
-\begin{matrix} r_{11} && r_{12} && r_{13} \\ r_{21} && r_{22} && r_{23} \\ r_{31} && r_{32} && r_{33} \end{matrix}
+\begin{matrix} r_{11} & r_{12} & r_{13} \\ r_{21} & r_{22} & r_{23} \\ r_{31} & r_{32} & r_{33} \end{matrix}
 \right]
 $$
 
@@ -148,7 +145,7 @@ $$
 $$
 R =
 \left[
-\begin{matrix} r_{11} && r_{12} && r_{13} \\ r_{21} && r_{22} && r_{23} \\ r_{31} && r_{32} && r_{33} \end{matrix}
+\begin{matrix} r_{11} & r_{12} & r_{13} \\ r_{21} & r_{22} & r_{23} \\ r_{31} & r_{32} & r_{33} \end{matrix}
 \right]
 $$
 

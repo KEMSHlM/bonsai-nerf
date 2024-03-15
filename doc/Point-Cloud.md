@@ -103,7 +103,7 @@ $$
 M =
 \left[
 \begin{matrix}
-r_{11} && r_{12} && r_{13} \\ r_{21} && r_{22} && r_{23} \\ r_{31} && r_{32} && r_{33} \\ \vdots && \vdots && \vdots \\ r_{N1} && r_{N2} && r_{N3}
+r_{11} & r_{12} & r_{13} \\ r_{21} & r_{22} & r_{23} \\ r_{31} & r_{32} & r_{33} \\ \vdots & \vdots & \vdots \\ r_{N1} & r_{N2} & r_{N3}
 \end{matrix}
 \right]
 $$
@@ -114,7 +114,7 @@ $$
 M' =
 \left[
 \begin{matrix}
-r_{11}-\overline{r}_1 && r_{12}-\overline{r}_2 && r_{13}-\overline{r}_3 \\ r_{21}-\overline{r}_1 && r_{22}-\overline{r}_2 && r_{23}-\overline{r}_3 \\ r_{31}-\overline{r}_1 && r_{32}-\overline{r}_2 && r_{33}-\overline{r}_3 \\ \vdots && \vdots && \vdots \\ r_{N1}-\overline{r}_1 && r_{N2}-\overline{r}_2 && r_{N3}-\overline{r}_3
+r_{11}-\overline{r}_1 & r_{12}-\overline{r}_2 & r_{13}-\overline{r}_3 \\ r_{21}-\overline{r}_1 & r_{22}-\overline{r}_2 & r_{23}-\overline{r}_3 \\ r_{31}-\overline{r}_1 & r_{32}-\overline{r}_2 & r_{33}-\overline{r}_3 \\ \vdots & \vdots & \vdots \\ r_{N1}-\overline{r}_1  r_{N2}-\overline{r}_2 & r_{N3}-\overline{r}_3
 \end{matrix}
 \right]
 $$
@@ -134,7 +134,7 @@ $$
 $$
 \Lambda =
 \left[
-\begin{matrix} \lambda_1 && 0 && 0 \\ 0 && \lambda_2 && 0 \\ 0 && 0 && \lambda_3 \end{matrix}
+\begin{matrix} \lambda_1 & 0 & 0 \\ 0 & \lambda_2 & 0 \\ 0 & 0 & \lambda_3 \end{matrix}
 \right]
 $$
 
