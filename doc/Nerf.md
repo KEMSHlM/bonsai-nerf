@@ -8,11 +8,12 @@
   - [1. はじめに](#1-はじめに)
   - [2. 訓練過程](#2-訓練過程)
   - [3. 推論過程](#3-推論過程)
-  - [4. カメラの内部パラメータ](#4-カメラの内部パラメータ)
+  - [4. 画像からの3次元復元](#4-画像からの3次元復元)
     - [カメラ座標系とワールド座標系](#カメラ座標系とワールド座標系)
     - [画像同士のマッチングについて](#画像同士のマッチングについて)
-    - [カメラ外部パラメータの推定](#カメラ外部パラメータの推定)
-  - [5. NeRFのパラメータ](#5-nerfのパラメータ)
+  - [5. カメラの内部パラメータ](#5-カメラの内部パラメータ)
+    - [広角撮影による精度向上](#広角撮影による精度向上)
+  - [5.カメラ外部パラメータ](#5カメラ外部パラメータ)
     - [AABB](#aabb)
   - [Memo](#memo)
   <!--toc:end-->
@@ -20,7 +21,8 @@
 # about Nerf
 
 > [Nerfを1から](https://kentapt.hatenablog.com/entry/2023/07/30/203604)  
-> [Nerf 論文](https://arxiv.org/pdf/2003.08934.pdf)
+> [Nerf 論文](https://arxiv.org/pdf/2003.08934.pdf)  
+> [NeRF Studio](https://docs.nerf.studio/)
 
 ## 0. 専門用語
 
@@ -79,12 +81,20 @@ NeRFで利用するニューラルネットワークの訓練を行う．
 
 $$
 R =
-\begin{bmatrix} r_{11} & r_{12} & r_{13} \\ r_{21} & r_{22} & r_{23} \\ r_{31} & r_{32} & r_{33} \end{bmatrix}
+\begin{bmatrix}
+r_{11} & r_{12} & r_{13} \\
+r_{21} & r_{22} & r_{23} \\
+r_{31} & r_{32} & r_{33}
+\end{bmatrix}
 $$
 
 $$
 t =
-\begin{bmatrix} t_1 \\ t_2 \\ t_3 \end{bmatrix}
+\begin{bmatrix}
+t_1 \\
+t_2 \\
+t_3
+\end{bmatrix}
 $$
 
 ### 画像同士のマッチングについて
@@ -109,7 +119,10 @@ f: 焦点距離, c: 光学的中心, s: 剪断係数
 
 $$
 R =
-\begin{bmatrix} f_{x} & s & c_{x} \\ 0 & f_{y} & c_{y} \\ 0 & 0 & 1
+\begin{bmatrix}
+f_{x} & s & c_{x} \\
+0 & f_{y} & c_{y} \\
+0 & 0 & 1
 \end{bmatrix}
 $$
 
@@ -140,20 +153,39 @@ $$
 もう一つのカメラの相対的な位置は，回転行列と並行移動のベクトルで表現することができる．
 
 $$
-\begin{bmatrix} X \\ Y \\ Z \end{bmatrix}
+\begin{align}
+\begin{bmatrix}
+X \\
+Y \\
+Z
+\end{bmatrix}
+
 = R
-\begin{bmatrix} X_w \\ Y_w \\ Z_w \end{bmatrix}
+\begin{bmatrix}
+X_w \\
+Y_w \\
+Z_w
+\end{bmatrix}
 + t
+\begin{align}
 $$
 
 $$
 R =
-\begin{bmatrix} r_{11} & r_{12} & r_{13} \\ r_{21} & r_{22} & r_{23} \\ r_{31} & r_{32} & r_{33} \end{bmatrix}
+\begin{bmatrix}
+r_{11} & r_{12} & r_{13} \\
+r_{21} & r_{22} & r_{23} \\
+r_{31} & r_{32} & r_{33}
+\end{bmatrix}
 $$
 
 $$
 t =
-\begin{bmatrix} t_1 \\ t_2 \\ t_3 \end{bmatrix}
+\begin{bmatrix}
+t_1 \\
+t_2 \\
+t_3
+\end{bmatrix}
 $$
 
 ### AABB

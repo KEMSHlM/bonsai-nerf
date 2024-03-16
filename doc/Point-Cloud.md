@@ -178,7 +178,8 @@ $\lambda_1 > \lambda_2 > \lambda_3$が成立するならば，$\lambda_3$に対�
 回転行列の積で表すと，
 
 $$
-{\begin{align}
+{
+\begin{align}
 \boldsymbol{R} _{xyz} (\alpha, \beta, \gamma)
 & = \boldsymbol{R} _x (\alpha) \boldsymbol{R} _y (\beta) \boldsymbol{R} _z (\gamma)  \\
 & = \begin{bmatrix}
